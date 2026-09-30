@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kiss Attack 💋</title>
+<style>
+body {
+margin: 0;
+overflow: hidden;
+background: black;
+color: white;
+font-family: Arial;
+text-align: center;
+}
+h1 {
+position: absolute;
+top: 20px;
+width: 100%;
+}
+.kiss {
+position: absolute;
+font-size: 24px;
+animation: fall 4s linear forwards;
+}
+@keyframes fall {
+0% { transform: translateY(-50px); opacity: 1; }
+100% { transform: translateY(100vh); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<h1>💋 Kiss Attack Activated 😘</h1>
+
+<script>
+function createKiss() {
+const kiss = document.createElement("div");
+kiss.classList.add("kiss");
+kiss.innerText = "💋";
+
+kiss.style.left = Math.random() * window.innerWidth + "px";
+kiss.style.fontSize = (20 + Math.random() * 40) + "px";
+
+document.body.appendChild(kiss);
+
+setTimeout(() => {
+kiss.remove();
+}, 4000);
+}
+
+setInterval(createKiss, 150);
+</script>
+
+</body>
+</html>
